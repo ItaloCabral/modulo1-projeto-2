@@ -1,0 +1,9 @@
+.font-regular{
+  font-family: 'Lato', sans-serif;
+  color: $text;
+}
+
+.font-bold{
+  @extend .regular;
+  font-weight: bold;
+}
