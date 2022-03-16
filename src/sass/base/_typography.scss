@@ -1,9 +1,12 @@
+@import "../utils/variables";
+@import "./fonts";
+
 .font-regular{
   font-family: 'Lato', sans-serif;
-  color: $text;
+  color: $primary;
 }
 
 .font-bold{
-  @extend .regular;
+  @extend .font-regular;
   font-weight: bold;
 }
