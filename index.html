@@ -8,17 +8,42 @@
 </head>
 <body>
   <header>
-    <div class="logo">
-      <img src="./src/img/logo.png" alt="logotipo" class="imgLogo">
-      <h1 class="text-xl">Controle Financeiro</h1>
+    <div class="headerContent">
+      <div class="logo">
+        <img src="./src/img/logo.png" alt="logotipo" class="imgLogo">
+        <h1 class="text-xl">Controle Financeiro</h1>
+      </div>
+       <div class="menu">
+         <ul class="menuItems">
+           <li class="item"><a href="#">Cadastro de Transações</a></li>
+           <li class="item"><a href="#">Limpar Dados</a></li>
+         </ul>
+       </div>
     </div>
-
-     <div class="menu">
-       <ul class="menuItems">
-         <li class="item"><a href="#">Cadastro de Transações</a></li>
-         <li class="item"><a href="#">Limpar Dados</a></li>
-       </ul>
-     </div>
   </header>
+  <main>
+    <section class="content">
+      <div class="card">
+        <h2 class="cardTitle">Nova Transação</h2>
+        <div class="cardContent">
+          <div class="formGroup">
+            <label for="type">Tipo de transação</label>
+            <select name="type" id="type">
+              <option>Compra</option>
+            </select>
+          </div>
+          <div class="formGroup">
+            <label for="name">Nome da mercadoria</label>
+            <input type="text" name="name" id="name" placeholder="Input">
+          </div>
+          <div class="formGroup">
+            <label for="amount">Valor</label>
+            <input type="text" name="amount" id="amount" placeholder="R$ 0,00">
+          </div>
+          <button>Adicionar Transação</button>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

@@ -1,0 +1,78 @@
+@import "../utils/mixins";
+
+main{
+
+  .content{
+    padding: 30px 22px;
+    min-width: viewport-sm;
+    width: 100%;
+    max-width: $viewport-lg;
+    margin: 0 auto;
+    
+    .card{
+      height: 344px;
+      width: 400px;
+      border-radius: 4px;
+      border: 1px solid $secondary;
+      padding: 15px;
+  
+      .cardTitle{
+        font-size: $text-lg;
+        line-height: 22px;
+        margin: 7px auto 22px;
+        text-align: center;
+  
+      }
+  
+      .cardContent{
+        height: calc(100% - 51px);
+        @include flex(center, space-between);
+        flex-direction: column;
+  
+        .formGroup{
+          @include flex(stretch, space-between);
+          flex-direction: column;
+          width: 100%;
+    
+          label{
+            line-height: 22px;
+            font-size: $text-sm;
+          }
+    
+          input{
+            border-radius: 4px;
+            border: 1px solid $secondary;
+            font-size: $text-sm;
+            line-height: 22px;
+            padding: 5px 12px;
+  
+            &::placeholder{
+              color: $text-secondary;
+            }
+          }
+    
+          select{
+            border-radius: 4px;
+            border: 1px solid $secondary;
+            font-size: $text-sm;
+            line-height: 22px;
+            padding: 5px 12px;
+          }
+        }
+  
+        button{
+          width: 370px;
+          height: 32px;
+          border-radius: 4px;
+          background-color: $primary;
+          border: none;
+          font-size: $text-sm;
+          color: $white;
+        }
+      }
+  
+  
+    }
+  }
+
+}
