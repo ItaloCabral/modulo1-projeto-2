@@ -1,40 +1,55 @@
 @import "../utils/mixins";
 
 header{
-  @include flex(center, space-between);
-  height: 80px;
-  min-width: viewport-sm;
   width: 100%;
-  max-width: $viewport-lg;
-  padding: 22px;
   background-color: $light;
 
-  .logo{
-    @include flex();
-    gap: 20px;
+  .headerContent{
+    height: 80px;
+    min-width: viewport-sm;
+    width: 100%;
+    max-width: $viewport-lg;
+    margin: 0 auto;
+    padding: 22px;
+    @include flex(center, space-between);
 
-    .imgLogo{
-
+    .logo{
+      @include flex();
+      gap: 20px;
+  
+      .imgLogo{
+  
+      }
     }
-  }
-
-  .menu{
-    background-color: $white;
-    
-    .menuItems{
-      height: 40px;
-      @include flex(center, center);
+  
+    .menu{
+      background-color: $white;
       
-      .item{
-        padding: 4px 20px;
+      .menuItems{
+        line-height: 19.2px;
+        @include flex(center, center);
+        
+        .item{
+          margin: 9px 20px;
+          
+          &:first-child{
+            
+            a::after{
+              content: "";
+              position: absolute;
+              width: 1px;
+              height: 100%;
+              background-color: $secondary;
+              transform: translateX(20px);
+            }
+          }
 
-        &:first-child{
-          border-right: 1px solid $secondary;
-        }
+          a{
+            font-size: $text-md;
+            color: $primary;
+            position: relative;
 
-        a{
-          font-size: $text-md;
-          color: $primary;
+          }
         }
       }
     }
