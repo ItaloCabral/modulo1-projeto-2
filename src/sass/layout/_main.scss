@@ -1,13 +1,17 @@
 @import "../utils/mixins";
+@import "../components/title";
 
 main{
 
+  @include flex(start, space-between, nowrap);
+  min-width: viewport-sm;
+  width: 100%;
+  max-width: $viewport-lg;
+  margin: 0 auto;
+  padding: 30px 22px;
+  gap: 10px;
+
   .content{
-    padding: 30px 22px;
-    min-width: viewport-sm;
-    width: 100%;
-    max-width: $viewport-lg;
-    margin: 0 auto;
     
     .card{
       height: 344px;
@@ -17,11 +21,7 @@ main{
       padding: 15px;
   
       .cardTitle{
-        font-size: $text-lg;
-        line-height: 22px;
-        margin: 7px auto 22px;
-        text-align: center;
-  
+        @include title($text-lg);
       }
   
       .cardContent{
@@ -72,7 +72,75 @@ main{
       }
   
   
+    }  
+  }
+  
+  .transaction{
+    width: 100%; 
+
+    .title{
+      @include title($text-lg);
+    }
+
+    table{
+      font-size: $text-sm;
+      line-height: 16px;
+      width: 100%;
+      padding: 5px;
+      line-height: 22px;
+
+      td,th{
+        &:nth-child(3){
+          text-align: right;
+        }
+      }
+
+      thead{
+        font-weight: bold;
+
+        tr{
+
+          th{
+            text-align: left;
+
+          }
+        }
+      }
+
+      tbody{
+
+        tr{
+          
+          td{
+            // width: 90%;
+          }
+        }
+      }
+
+      tfoot{
+        font-weight: bold;
+        // line-height: 22px;
+
+        tr{
+          
+          td{
+            padding: 6px 0;
+
+            &:last-child{
+              display: flex;
+              flex-direction: column;
+
+              span{
+                font-weight: 400;
+                text-transform: uppercase;
+                font-size: $text-xm;
+              }
+            }
+
+          }
+        }
+      }
+
     }
   }
-
 }

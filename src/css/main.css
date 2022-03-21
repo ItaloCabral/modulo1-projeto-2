@@ -149,12 +149,23 @@ header .headerContent .menu .menuItems .item a {
   position: relative;
 }
 
-main .content {
-  padding: 30px 22px;
+main .transaction .title, main .content .card .cardTitle {
+  line-height: 22px;
+  margin: 7px auto 22px;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: nowrap;
   min-width: viewport-sm;
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
+  padding: 30px 22px;
+  gap: 10px;
 }
 main .content .card {
   height: 344px;
@@ -165,9 +176,6 @@ main .content .card {
 }
 main .content .card .cardTitle {
   font-size: 1.8rem;
-  line-height: 22px;
-  margin: 7px auto 22px;
-  text-align: center;
 }
 main .content .card .cardContent {
   height: calc(100% - 51px);
@@ -214,6 +222,43 @@ main .content .card .cardContent button {
   border: none;
   font-size: 1.4rem;
   color: white;
+}
+main .transaction {
+  width: 100%;
+}
+main .transaction .title {
+  font-size: 1.8rem;
+}
+main .transaction table {
+  font-size: 1.4rem;
+  line-height: 16px;
+  width: 100%;
+  padding: 5px;
+  line-height: 22px;
+}
+main .transaction table td:nth-child(3), main .transaction table th:nth-child(3) {
+  text-align: right;
+}
+main .transaction table thead {
+  font-weight: bold;
+}
+main .transaction table thead tr th {
+  text-align: left;
+}
+main .transaction table tfoot {
+  font-weight: bold;
+}
+main .transaction table tfoot tr td {
+  padding: 6px 0;
+}
+main .transaction table tfoot tr td:last-child {
+  display: flex;
+  flex-direction: column;
+}
+main .transaction table tfoot tr td:last-child span {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=main.css.map */

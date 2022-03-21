@@ -1,0 +1,10 @@
+%title{
+  line-height: 22px;
+  margin: 7px auto 22px;
+  text-align: center;
+}
+
+@mixin title($size){
+  @extend %title;
+  font-size: $size;
+}
