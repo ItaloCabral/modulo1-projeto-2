@@ -11,14 +11,19 @@
     <div class="headerContent">
       <div class="logo">
         <img src="./src/img/logo.png" alt="logotipo" class="imgLogo">
-        <h1 class="text-xl">Controle Financeiro</h1>
       </div>
-       <div class="menu">
-         <ul class="menuItems">
-           <li class="item"><a href="#">Cadastro de Transações</a></li>
-           <li class="item"><a href="#">Limpar Dados</a></li>
-         </ul>
-       </div>
+      <h1 class="mainTitle">Controle Financeiro</h1>
+      <div class="menu">
+        <ul class="menuItems">
+          <li class="item"><a href="#">Cadastro de Transações</a></li>
+          <li class="item"><a href="#">Limpar Dados</a></li>
+        </ul>
+      </div>
+      <div class="burgerButton" id="burgerButton">
+        <div class="burger"></div>
+        <div class="burger"></div>
+        <div class="burger"></div>
+      </div>
     </div>
   </header>
   <main>
@@ -30,6 +35,7 @@
             <label for="type">Tipo de transação</label>
             <select name="type" id="type">
               <option>Compra</option>
+              <option>Venda</option>
             </select>
           </div>
           <div class="formGroup">
@@ -40,6 +46,8 @@
             <label for="amount">Valor</label>
             <input type="text" name="amount" id="amount" placeholder="R$ 0,00">
           </div>
+        </div>
+        <div class="cardFooter">
           <button>Adicionar Transação</button>
         </div>
       </div>
@@ -80,6 +88,20 @@
         </tfoot>
       </table>
     </aside>
+    <div class="sidemenu" id="sidemenu">
+
+      <div class="closeButton" id="closeButton">
+        
+      </div>
+
+      <div class="menuList">
+        <a class="menuItem" href="#">Cadastro de transações</a>
+        <a class="menuItem" href="#">Limpar dados</a>
+      </div>
+
+    </div>
   </main>
+
+  <script src="./src/js/main.js"></script>
 </body>
 </html>
