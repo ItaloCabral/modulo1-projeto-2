@@ -1,0 +1,67 @@
+@import "../utils/mixins";
+
+.open{
+  transform: translateX(0) !important;
+}
+
+.sidemenu{
+  height: 100vh;
+  width: 252px;
+  background-color: $primary;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(252px);
+  transition: transform .1s ease-out;
+
+  .closeButton{
+    width: 16px;
+    height: 16px;
+    top: 20px;
+    left: 20px;
+    position: absolute;
+    cursor: pointer;
+
+    &:before,&:after{
+        content:'';
+        position:absolute;
+        width:16px;
+        height:3px;
+        background-color:white;
+        border-radius:2px;
+    }
+    
+    &:before{
+        -webkit-transform:rotate(45deg);
+        -moz-transform:rotate(45deg);
+        transform:rotate(45deg);
+    }
+    &:after{
+        -webkit-transform:rotate(-45deg);
+        -moz-transform:rotate(-45deg);
+        transform:rotate(-45deg);
+    }
+  }
+
+  .menuList{
+    margin-top: 46px;
+    @include flex(center, end);
+    flex-direction: column;
+    
+    .menuItem{
+      padding: 6px;
+      text-align: right;
+      width: 100%;
+      color: #fff;
+      font-size: $text-md;
+      line-height: 19.2px;
+      width: 100%;
+      
+      &:hover{
+        background-color: $secondary;
+        color: $primary;
+      }
+    }
+  }
+
+}
