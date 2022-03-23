@@ -25,11 +25,12 @@ main{
       }
   
       .cardContent{
-        height: calc(100% - 51px);
-        @include flex(center, space-between);
+        height: calc(100% - 83px);
+        @include flex(center, stretch);
         flex-direction: column;
   
         .formGroup{
+          margin: auto 0;
           @include flex(stretch, space-between);
           flex-direction: column;
           width: 100%;
@@ -59,7 +60,14 @@ main{
             padding: 5px 12px;
           }
         }
-  
+        
+      }
+
+      .cardFooter{
+
+        display: grid;
+        place-items: center;
+
         button{
           width: 370px;
           height: 32px;
@@ -85,11 +93,27 @@ main{
     table{
       font-size: $text-sm;
       line-height: 16px;
+      border-collapse: collapse;
       width: 100%;
-      padding: 5px;
-      line-height: 22px;
+
+      tr{
+        border-top: 1px solid $primary;
+      }
 
       td,th{
+        text-align: center;
+        padding: 8px 10px;
+
+        &:first-child{
+          width: 10px;
+          padding-right: 0;
+          text-align: left;
+        }
+
+        &:nth-child(2){
+          text-align: left;
+        }
+
         &:nth-child(3){
           text-align: right;
         }
@@ -99,10 +123,10 @@ main{
         font-weight: bold;
 
         tr{
+          border: none;
 
           th{
             text-align: left;
-
           }
         }
       }
@@ -112,7 +136,11 @@ main{
         tr{
           
           td{
-            // width: 90%;
+            vertical-align: super;
+
+            &:nth-child(2){
+              width: 50%;
+            }
           }
         }
       }
@@ -141,6 +169,61 @@ main{
         }
       }
 
+    }
+  }
+
+  
+  @media(max-width: $viewport-md){
+    flex-direction: column;
+
+    .content{
+      width: 100%;
+      
+      .card{
+        width: 100% !important;
+        height: 189px !important;
+
+        .cardContent{
+          flex-wrap: wrap;
+          gap: 20px;
+
+          .formGroup{
+            width: 20%;
+            margin: 0;
+
+            &:nth-child(2){
+              width: 50%;
+            }
+          }
+        }
+
+        .cardFooter{
+          place-items: end;
+
+          button{
+            width: 189px;
+          }
+        }
+      }
+    }
+
+    .transaction{
+
+      table{
+
+        tbody{
+
+          tr{
+
+            td{
+  
+              &:nth-child(2){
+                width: 30%;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

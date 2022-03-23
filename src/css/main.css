@@ -14,6 +14,7 @@ html {
 
 body {
   font-family: "Lato";
+  overflow-x: hidden;
 }
 
 ul {
@@ -111,7 +112,7 @@ header .headerContent {
   margin: 0 auto;
   padding: 22px;
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
   flex-wrap: nowrap;
 }
@@ -121,6 +122,14 @@ header .headerContent .logo {
   align-items: center;
   flex-wrap: nowrap;
   gap: 20px;
+}
+header .headerContent .mainTitle {
+  margin: 0 auto 0 20px;
+}
+@media (max-width: 768px) {
+  header .headerContent .mainTitle {
+    margin: auto;
+  }
 }
 header .headerContent .menu {
   background-color: white;
@@ -147,6 +156,24 @@ header .headerContent .menu .menuItems .item a {
   font-size: 1.6rem;
   color: #333333;
   position: relative;
+}
+@media (max-width: 768px) {
+  header .headerContent .menu {
+    display: none;
+  }
+}
+header .headerContent .burgerButton {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+}
+header .headerContent .burgerButton .burger {
+  height: 2px;
+  width: 100%;
+  background-color: #333333;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 main .transaction .title, main .content .card .cardTitle {
@@ -178,14 +205,15 @@ main .content .card .cardTitle {
   font-size: 1.8rem;
 }
 main .content .card .cardContent {
-  height: calc(100% - 51px);
+  height: calc(100% - 83px);
   display: flex;
-  justify-content: space-between;
+  justify-content: stretch;
   align-items: center;
   flex-wrap: nowrap;
   flex-direction: column;
 }
 main .content .card .cardContent .formGroup {
+  margin: auto 0;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
@@ -214,7 +242,11 @@ main .content .card .cardContent .formGroup select {
   line-height: 22px;
   padding: 5px 12px;
 }
-main .content .card .cardContent button {
+main .content .card .cardFooter {
+  display: grid;
+  place-items: center;
+}
+main .content .card .cardFooter button {
   width: 370px;
   height: 32px;
   border-radius: 4px;
@@ -232,9 +264,23 @@ main .transaction .title {
 main .transaction table {
   font-size: 1.4rem;
   line-height: 16px;
+  border-collapse: collapse;
   width: 100%;
-  padding: 5px;
-  line-height: 22px;
+}
+main .transaction table tr {
+  border-top: 1px solid #333333;
+}
+main .transaction table td, main .transaction table th {
+  text-align: center;
+  padding: 8px 10px;
+}
+main .transaction table td:first-child, main .transaction table th:first-child {
+  width: 10px;
+  padding-right: 0;
+  text-align: left;
+}
+main .transaction table td:nth-child(2), main .transaction table th:nth-child(2) {
+  text-align: left;
 }
 main .transaction table td:nth-child(3), main .transaction table th:nth-child(3) {
   text-align: right;
@@ -242,8 +288,17 @@ main .transaction table td:nth-child(3), main .transaction table th:nth-child(3)
 main .transaction table thead {
   font-weight: bold;
 }
+main .transaction table thead tr {
+  border: none;
+}
 main .transaction table thead tr th {
   text-align: left;
+}
+main .transaction table tbody tr td {
+  vertical-align: super;
+}
+main .transaction table tbody tr td:nth-child(2) {
+  width: 50%;
 }
 main .transaction table tfoot {
   font-weight: bold;
@@ -259,6 +314,100 @@ main .transaction table tfoot tr td:last-child span {
   font-weight: 400;
   text-transform: uppercase;
   font-size: 1rem;
+}
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+  main .content {
+    width: 100%;
+  }
+  main .content .card {
+    width: 100% !important;
+    height: 189px !important;
+  }
+  main .content .card .cardContent {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  main .content .card .cardContent .formGroup {
+    width: 20%;
+    margin: 0;
+  }
+  main .content .card .cardContent .formGroup:nth-child(2) {
+    width: 50%;
+  }
+  main .content .card .cardFooter {
+    place-items: end;
+  }
+  main .content .card .cardFooter button {
+    width: 189px;
+  }
+  main .transaction table tbody tr td:nth-child(2) {
+    width: 30%;
+  }
+}
+
+.open {
+  transform: translateX(0) !important;
+}
+
+.sidemenu {
+  height: 100vh;
+  width: 252px;
+  background-color: #333333;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(252px);
+  transition: transform 0.1s ease-out;
+}
+.sidemenu .closeButton {
+  width: 16px;
+  height: 16px;
+  top: 20px;
+  left: 20px;
+  position: absolute;
+  cursor: pointer;
+}
+.sidemenu .closeButton:before, .sidemenu .closeButton:after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+.sidemenu .closeButton:before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.sidemenu .closeButton:after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.sidemenu .menuList {
+  margin-top: 46px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+.sidemenu .menuList .menuItem {
+  padding: 6px;
+  text-align: right;
+  width: 100%;
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 19.2px;
+  width: 100%;
+}
+.sidemenu .menuList .menuItem:hover {
+  background-color: #979797;
+  color: #333333;
 }
 
 /*# sourceMappingURL=main.css.map */
