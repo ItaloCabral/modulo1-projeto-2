@@ -64,4 +64,13 @@
     }
   }
 
+  @media(min-width: $viewport-md){
+    display: none;
+  }
+
+  @media(max-width: $viewport-sm){
+    width: 351px;
+    transform: translateX(351px);
+  }
+
 }

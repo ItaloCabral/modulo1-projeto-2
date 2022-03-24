@@ -7,100 +7,102 @@
   <title>Controle Financeiro</title>
 </head>
 <body>
-  <header>
-    <div class="headerContent">
-      <div class="logo">
-        <img src="./src/img/logo.png" alt="logotipo" class="imgLogo">
-      </div>
-      <h1 class="mainTitle">Controle Financeiro</h1>
-      <div class="menu">
-        <ul class="menuItems">
-          <li class="item"><a href="#">Cadastro de Transações</a></li>
-          <li class="item"><a href="#">Limpar Dados</a></li>
-        </ul>
-      </div>
-      <div class="burgerButton" id="burgerButton">
-        <div class="burger"></div>
-        <div class="burger"></div>
-        <div class="burger"></div>
-      </div>
-    </div>
-  </header>
-  <main>
-    <section class="content">
-      <div class="card">
-        <h2 class="cardTitle">Nova Transação</h2>
-        <div class="cardContent">
-          <div class="formGroup">
-            <label for="type">Tipo de transação</label>
-            <select name="type" id="type">
-              <option>Compra</option>
-              <option>Venda</option>
-            </select>
-          </div>
-          <div class="formGroup">
-            <label for="name">Nome da mercadoria</label>
-            <input type="text" name="name" id="name" placeholder="Input">
-          </div>
-          <div class="formGroup">
-            <label for="amount">Valor</label>
-            <input type="text" name="amount" id="amount" placeholder="R$ 0,00">
-          </div>
+  <div class="webContent">
+    <nav>
+      <div class="headerContent">
+        <div class="logo">
+          <img src="./src/img/logo.png" alt="logotipo" class="imgLogo">
         </div>
-        <div class="cardFooter">
-          <button>Adicionar Transação</button>
+        <h1 class="mainTitle">Controle Financeiro</h1>
+        <div class="menu">
+          <ul class="menuItems">
+            <li class="item"><a href="#">Cadastro de Transações</a></li>
+            <li class="item"><a href="#">Limpar Dados</a></li>
+          </ul>
+        </div>
+        <div class="burgerButton" id="burgerButton">
+          <div class="burger"></div>
+          <div class="burger"></div>
+          <div class="burger"></div>
         </div>
       </div>
-    </section>
-    <aside class="transaction">
-      <h2 class="title">Extrato de transações</h2>
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Mercadoria</th>
-            <th>Valor</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>+</td>
-            <td>Lorem ipsum dolor sit amet consectetur</td>
-            <td>R$ 12.999,99</td>
-          </tr>
-          <tr>
-            <td>-</td>
-            <td>Quis nostrud exercitation</td>
-            <td>R$ 99,99</td>
-          </tr>
-          <tr>
-            <td>+</td>
-            <td>Lorem, ipsum</td>
-            <td>R$ 9,99</td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td></td>
-            <td>Total</td>
-            <td>R$ 12.909,99 <span>[lucro]</span></td>
-          </tr>
-        </tfoot>
-      </table>
-    </aside>
-    <div class="sidemenu" id="sidemenu">
-
-      <div class="closeButton" id="closeButton">
-        
+    </nav>
+    <main>
+      <section class="content">
+        <div class="card">
+          <h2 class="cardTitle">Nova Transação</h2>
+          <div class="cardContent">
+            <div class="formGroup">
+              <label for="type">Tipo de transação</label>
+              <select name="type" id="type">
+                <option>Compra</option>
+                <option>Venda</option>
+              </select>
+            </div>
+            <div class="formGroup">
+              <label for="name">Nome da mercadoria</label>
+              <input type="text" name="name" id="name" placeholder="Input">
+            </div>
+            <div class="formGroup">
+              <label for="amount">Valor</label>
+              <input type="text" name="amount" id="amount" placeholder="R$ 0,00">
+            </div>
+          </div>
+          <div class="cardFooter">
+            <button>Adicionar Transação</button>
+          </div>
+        </div>
+      </section>
+      <aside class="transaction">
+        <h2 class="title">Extrato de transações</h2>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Mercadoria</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>+</td>
+              <td>Lorem ipsum dolor sit amet consectetur</td>
+              <td>R$ 12.999,99</td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>Quis nostrud exercitation</td>
+              <td>R$ 99,99</td>
+            </tr>
+            <tr>
+              <td>+</td>
+              <td>Lorem, ipsum</td>
+              <td>R$ 9,99</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td></td>
+              <td>Total</td>
+              <td>R$ 12.909,99 <span>[lucro]</span></td>
+            </tr>
+          </tfoot>
+        </table>
+      </aside>
+      <div class="sidemenu" id="sidemenu">
+  
+        <div class="closeButton" id="closeButton">
+          
+        </div>
+  
+        <div class="menuList">
+          <a class="menuItem" href="#">Cadastro de transações</a>
+          <a class="menuItem" href="#">Limpar dados</a>
+        </div>
+  
       </div>
-
-      <div class="menuList">
-        <a class="menuItem" href="#">Cadastro de transações</a>
-        <a class="menuItem" href="#">Limpar dados</a>
-      </div>
-
-    </div>
-  </main>
+    </main>
+  </div>
 
   <script src="./src/js/main.js"></script>
 </body>
