@@ -30,7 +30,7 @@ main{
         flex-direction: column;
   
         .formGroup{
-          margin: auto 0;
+          margin: auto 20px;
           @include flex(stretch, space-between);
           flex-direction: column;
           width: 100%;
@@ -201,17 +201,12 @@ main{
           gap: 5px;
 
           .formGroup{
-            width: 120px;
-            margin: 0;
+            width: calc(30% - 20px);
+            margin: 0 10px;
 
             &:nth-child(2){
-              width: 50%;
-            }
-
-            @media(max-width: 574px){
-              &:nth-child(2){
-                width: 40%;
-              }
+              width: 40% !important;
+              margin: 0 !important;
             }
           }
         }

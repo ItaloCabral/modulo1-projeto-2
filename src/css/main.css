@@ -94,7 +94,7 @@ ul {
 }
 .font-regular, .font-bold {
   font-family: "Lato", sans-serif;
-  color: #333333;
+  color: rgb(51, 51, 51);
 }
 
 .font-bold {
@@ -103,7 +103,7 @@ ul {
 
 nav {
   width: 100%;
-  background-color: #e0e0e0;
+  background-color: rgb(224, 224, 224);
 }
 nav .headerContent {
   height: 80px;
@@ -125,42 +125,12 @@ nav .headerContent .logo {
   gap: 20px;
 }
 nav .headerContent .mainTitle {
+  font-size: 20px;
   margin: 0 auto 0 20px;
 }
 @media (max-width: 768px) {
   nav .headerContent .mainTitle {
     margin: auto;
-  }
-}
-nav .headerContent .menu {
-  background-color: white;
-}
-nav .headerContent .menu .menuItems {
-  line-height: 19.2px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-nav .headerContent .menu .menuItems .item {
-  margin: 9px 20px;
-}
-nav .headerContent .menu .menuItems .item:first-child a::after {
-  content: "";
-  position: absolute;
-  width: 1px;
-  height: 100%;
-  background-color: #979797;
-  transform: translateX(20px);
-}
-nav .headerContent .menu .menuItems .item a {
-  font-size: 1.6rem;
-  color: #333333;
-  position: relative;
-}
-@media (max-width: 768px) {
-  nav .headerContent .menu {
-    display: none;
   }
 }
 nav .headerContent .burgerButton {
@@ -173,7 +143,7 @@ nav .headerContent .burgerButton {
 nav .headerContent .burgerButton .burger {
   height: 2px;
   width: 100%;
-  background-color: #333333;
+  background-color: rgb(51, 51, 51);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 @media (min-width: 768px) {
@@ -204,7 +174,7 @@ main .content .card {
   height: 344px;
   width: 400px;
   border-radius: 4px;
-  border: 1px solid #979797;
+  border: 1px solid rgb(151, 151, 151);
   padding: 15px;
 }
 main .content .card .cardTitle {
@@ -219,7 +189,7 @@ main .content .card .cardContent {
   flex-direction: column;
 }
 main .content .card .cardContent .formGroup {
-  margin: auto 0;
+  margin: auto 20px;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
@@ -233,13 +203,13 @@ main .content .card .cardContent .formGroup label {
 }
 main .content .card .cardContent .formGroup input, main .content .card .cardContent .formGroup select {
   border-radius: 4px;
-  border: 1px solid #979797;
+  border: 1px solid rgb(151, 151, 151);
   font-size: 1.4rem;
   line-height: 22px;
   padding: 5px 12px;
 }
 main .content .card .cardContent .formGroup input::placeholder, main .content .card .cardContent .formGroup select::placeholder {
-  color: #888888;
+  color: rgb(136, 136, 136);
 }
 main .content .card .cardContent .formGroup select {
   height: 33px;
@@ -252,10 +222,10 @@ main .content .card .cardFooter button {
   width: 370px;
   height: 32px;
   border-radius: 4px;
-  background-color: #333333;
+  background-color: rgb(51, 51, 51);
   border: none;
   font-size: 1.4rem;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 main .transaction {
   width: 100%;
@@ -275,7 +245,7 @@ main .transaction table {
   width: 100%;
 }
 main .transaction table tr {
-  border-top: 1px solid #333333;
+  border-top: 1px solid rgb(51, 51, 51);
 }
 main .transaction table td, main .transaction table th {
   text-align: center;
@@ -348,19 +318,13 @@ main .transaction table tfoot tr td:last-child span {
     gap: 5px;
   }
   main .content .card .cardContent .formGroup {
-    width: 120px;
-    margin: 0;
+    width: calc(30% - 20px);
+    margin: 0 10px;
   }
   main .content .card .cardContent .formGroup:nth-child(2) {
-    width: 50%;
+    width: 40% !important;
+    margin: 0 !important;
   }
-}
-@media (min-width: 512px) and (max-width: 768px) and (max-width: 574px) {
-  main .content .card .cardContent .formGroup:nth-child(2) {
-    width: 40%;
-  }
-}
-@media (min-width: 512px) and (max-width: 768px) {
   main .content .card .cardFooter {
     place-items: end;
   }
@@ -387,8 +351,9 @@ main .transaction table tfoot tr td:last-child span {
 .sidemenu {
   height: 100vh;
   width: 252px;
-  background-color: #333333;
-  position: absolute;
+  background-color: rgb(51, 51, 51);
+  position: fixed;
+  z-index: 10;
   top: 0;
   right: 0;
   transform: translateX(252px);
@@ -438,11 +403,47 @@ main .transaction table tfoot tr td:last-child span {
   width: 100%;
 }
 .sidemenu .menuList .menuItem:hover {
-  background-color: #979797;
-  color: #333333;
+  background-color: rgb(151, 151, 151);
+  color: rgb(51, 51, 51);
 }
 @media (min-width: 768px) {
   .sidemenu {
+    background-color: rgb(255, 255, 255);
+    position: static;
+    height: 100%;
+    transform: translate(0);
+    width: 400px;
+  }
+  .sidemenu .menuList {
+    line-height: 19.2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin-top: 0;
+    height: 100%;
+  }
+  .sidemenu .menuList .menuItem {
+    text-align: center;
+    margin: 0;
+    width: 50%;
+    font-size: 1.6rem;
+    color: rgb(51, 51, 51);
+    position: relative;
+  }
+  .sidemenu .menuList .menuItem:hover {
+    background-color: transparent;
+  }
+  .sidemenu .menuList .menuItem:first-child::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 24px;
+    background-color: rgb(151, 151, 151);
+    transform: translate(20px, -1px);
+  }
+  .sidemenu .closeButton {
     display: none;
   }
 }

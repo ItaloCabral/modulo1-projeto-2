@@ -16,53 +16,14 @@ nav{
     .logo{
       @include flex();
       gap: 20px;
-  
-      .imgLogo{
-  
-      }
     }
 
     .mainTitle{
+      font-size: 20px;
       margin: 0 auto 0 20px;
 
       @media(max-width: $viewport-md){
         margin: auto;
-      }
-    }
-  
-    .menu{
-      background-color: $white;
-      
-      .menuItems{
-        line-height: 19.2px;
-        @include flex(center, center);
-        
-        .item{
-          margin: 9px 20px;
-          
-          &:first-child{
-            
-            a::after{
-              content: "";
-              position: absolute;
-              width: 1px;
-              height: 100%;
-              background-color: $secondary;
-              transform: translateX(20px);
-            }
-          }
-
-          a{
-            font-size: $text-md;
-            color: $primary;
-            position: relative;
-
-          }
-        }
-      }
-
-      @media(max-width: $viewport-md){
-        display: none;
       }
     }
 
