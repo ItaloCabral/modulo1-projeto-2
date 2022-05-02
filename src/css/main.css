@@ -211,6 +211,9 @@ main .content .card .cardContent .formGroup input, main .content .card .cardCont
 main .content .card .cardContent .formGroup input::placeholder, main .content .card .cardContent .formGroup select::placeholder {
   color: rgb(136, 136, 136);
 }
+main .content .card .cardContent .formGroup input.error {
+  border-color: rgb(255, 50, 50);
+}
 main .content .card .cardContent .formGroup select {
   height: 33px;
 }

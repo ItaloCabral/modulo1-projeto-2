@@ -20,7 +20,7 @@
     
           <div class="menuList">
             <a class="menuItem" href="#">Cadastro de transações</a>
-            <a class="menuItem" href="#">Limpar dados</a>
+            <a class="menuItem" href="javascript:void(0)" onclick="clearTransactions()">Limpar dados</a>
           </div>
     
         </div>
@@ -39,8 +39,8 @@
             <div class="formGroup">
               <label for="type">Tipo de transação</label>
               <select name="type" id="type">
-                <option>Compra</option>
-                <option>Venda</option>
+                <option value="-">Compra</option>
+                <option value="+">Venda</option>
               </select>
             </div>
             <div class="formGroup">
@@ -49,11 +49,11 @@
             </div>
             <div class="formGroup">
               <label for="amount">Valor</label>
-              <input type="text" name="amount" id="amount" placeholder="R$ 0,00">
+              <input type="text" maxlength="9" onkeyup="handleChangeAmount(this)" name="amount" id="amount" placeholder="R$ 0,00">
             </div>
           </div>
           <div class="cardFooter">
-            <button>Adicionar Transação</button>
+            <button onclick="handleSubmit()">Adicionar Transação</button>
           </div>
         </div>
       </section>
@@ -67,28 +67,14 @@
               <th>Valor</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>+</td>
-              <td>Lorem ipsum dolor sit amet consectetur</td>
-              <td>R$ 12.999,99</td>
-            </tr>
-            <tr>
-              <td>-</td>
-              <td>Quis nostrud exercitation</td>
-              <td>R$ 99,99</td>
-            </tr>
-            <tr>
-              <td>+</td>
-              <td>Lorem, ipsum</td>
-              <td>R$ 9,99</td>
-            </tr>
+          <tbody id="statement">
+            
           </tbody>
           <tfoot>
             <tr>
               <td></td>
               <td>Total</td>
-              <td>R$ 12.909,99 <span>[lucro]</span></td>
+              <td id="totalAmount">R$ 0,00</td>
             </tr>
           </tfoot>
         </table>
@@ -97,5 +83,6 @@
   </div>
 
   <script src="./src/js/main.js"></script>
+  <script src="./src/js/modal.js"></script>
 </body>
 </html>
